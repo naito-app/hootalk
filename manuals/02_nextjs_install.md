@@ -29,7 +29,20 @@ npx create-next-app@latest . \
 
 ---
 
-## 3. 完了
+## 3. Next.jsテレメトリの無効化（推奨）
+
+Next.jsは使用状況の匿名データを収集します。毎回の起動時にメッセージが表示されるのを防ぐため、テレメトリを無効にすることをお勧めします。
+
+```bash
+npx next telemetry disable
+```
+
+> 設定は `~/Library/Preferences/nextjs-nodejs/config.json` に保存されます。  
+> 後で有効にしたい場合は `npx next telemetry enable` で有効にできます。
+
+---
+
+## 4. 完了
 
 これでNext.js（TypeScript, ESLint, Tailwind CSS対応）の初期設定が完了です。
 
