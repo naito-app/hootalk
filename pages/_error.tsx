@@ -1,4 +1,5 @@
 import { NextPageContext } from 'next';
+import Link from 'next/link';
 
 interface ErrorProps {
   statusCode?: number;
@@ -17,12 +18,12 @@ function Error({ statusCode }: ErrorProps) {
           ? `サーバー側でエラーが発生しました`
           : '予期しないエラーが発生しました'}
       </p>
-      <a
+      <Link
         href="/"
         className="mt-8 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
       >
         ホームに戻る
-      </a>
+      </Link>
     </div>
   );
 }
