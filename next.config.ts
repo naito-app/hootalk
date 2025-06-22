@@ -8,16 +8,14 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/hootalk' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/hootalk/' : '',
   
-  // 静的エクスポートを有効化
-  output: 'export',
-  
-  // 画像最適化を無効化（静的エクスポートでは使用不可）
-  images: {
-    unoptimized: true,
-  },
-  
-  // trailingSlashを有効化
-  trailingSlash: true,
+  // 静的エクスポートを有効化（プロダクション時のみ）
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    images: {
+      unoptimized: true,
+    },
+    trailingSlash: true,
+  }),
 };
 
 export default nextConfig;
